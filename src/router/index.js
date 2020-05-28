@@ -70,11 +70,18 @@ export const constantRoutes = [
         meta: { title: '用户列表', icon: 'table' }
       },
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: '列表', icon: 'table' }
+        path: 'editUser/:id',
+        hidden: true,
+        name: 'editUser',
+        component: () => import('@/views/table/editUser'),
+        meta: { title: '修改用户', icon: 'table' }
       },
+      // {
+      //   path: 'table',
+      //   name: 'Table',
+      //   component: () => import('@/views/table/index'),
+      //   meta: { title: '列表', icon: 'table' }
+      // },
       {
         path: 'tree',
         name: 'Tree',
@@ -84,18 +91,18 @@ export const constantRoutes = [
     ]
   },
 
-  {
-    path: '/form',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: '表单', icon: 'form' }
-      }
-    ]
-  },
+  // {
+  //   path: '/form',
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: 'index',
+  //       name: 'Form',
+  //       component: () => import('@/views/form/index'),
+  //       meta: { title: '表单', icon: 'form' }
+  //     }
+  //   ]
+  // },
 
   {
     path: '/nested',

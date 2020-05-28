@@ -15,6 +15,8 @@ import router from './router'
 import '@/icons' // icon
 import '@/permission' // permission control
 
+import Moment from 'moment'
+
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
@@ -34,6 +36,15 @@ Vue.use(ElementUI, { locale })
 // Vue.use(ElementUI)
 
 Vue.config.productionTip = false
+
+//  全局过滤器 时间戳 
+Vue.filter('dateformat', function(dataStr, pattern = 'YYYY-MM-DD hh:mm:ss') {
+  if (dataStr) {
+    return Moment(dataStr).format(pattern)
+  } else {
+    return dataStr
+  }
+})
 
 new Vue({
   el: '#app',
